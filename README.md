@@ -1,5 +1,11 @@
 # Session Limit Tracker
 
+[![Latest release](https://img.shields.io/github/v/release/ihamzarizvi/SessionLimitTracker?sort=semver&label=release)](https://github.com/ihamzarizvi/SessionLimitTracker/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/ihamzarizvi/SessionLimitTracker/total?label=downloads)](https://github.com/ihamzarizvi/SessionLimitTracker/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Platform](https://img.shields.io/badge/macOS-14%2B%20·%20Apple%20silicon-black?logo=apple)
+![Swift](https://img.shields.io/badge/Swift-6-orange?logo=swift&logoColor=white)
+
 **Ambient AI usage limits for macOS.** A menu-bar app and Samsung-style edge rail that
 keeps your Claude, ChatGPT and Gemini usage limits permanently in view — so you stop
 discovering the cap mid-task.
@@ -7,6 +13,11 @@ discovering the cap mid-task.
 Claude meters two windows at once: a rolling **5-hour session** limit and a **weekly
 all-models** limit, shared across web, desktop and Claude Code. The only way to see them
 is to stop and run `/usage`. This app makes both ambient, and warns you before you're cut off.
+
+### ⬇︎ [Download the latest DMG](https://github.com/ihamzarizvi/SessionLimitTracker/releases/latest)
+
+Open it, drag the app to Applications, then see [Install](#install) for the one-time
+Gatekeeper step (the app is unsigned/ad-hoc, not notarised).
 
 ---
 
