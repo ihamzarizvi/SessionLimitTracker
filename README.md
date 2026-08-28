@@ -15,15 +15,30 @@ is to stop and run `/usage`. This app makes both ambient, and warns you before y
 Download **[SessionLimitTracker-1.0.0.dmg](https://github.com/ihamzarizvi/SessionLimitTracker/releases/latest)**,
 open it, and drag the app to Applications.
 
-The app is ad-hoc signed but **not notarised** (that needs a paid Apple Developer
-Program membership), so on first launch macOS will say the developer cannot be
-verified. Either **right-click the app → Open → Open**, or clear the quarantine flag:
+The app is ad-hoc signed but **not notarised** — notarisation needs a paid Apple
+Developer Program membership. macOS therefore blocks it on first launch with
+*"Apple could not verify 'Session Limit Tracker' is free of malware."*
+
+**To open it anyway (macOS 15 Sequoia and later):**
+
+1. Double-click the app once, then dismiss the warning.
+2. Open **System Settings → Privacy & Security** and scroll to the bottom.
+3. Click **Open Anyway** next to Session Limit Tracker and authenticate.
+
+macOS 15 removed the old Control-click → **Open** shortcut, so that route only works
+on macOS 14 Sonoma and earlier.
+
+Alternatively, clear the quarantine flag in Terminal and it launches normally:
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/Session Limit Tracker.app"
 ```
 
-It runs as a menu-bar item with no Dock icon. Requires macOS 14 or later.
+Building from source avoids the prompt entirely — locally built apps are never
+quarantined.
+
+Requires **macOS 14 or later on Apple silicon**. Runs as a menu-bar item with no
+Dock icon.
 
 ## Features
 
