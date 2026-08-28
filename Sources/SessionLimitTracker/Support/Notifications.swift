@@ -22,8 +22,14 @@ final class AlertEngine {
 
     func requestAuthorizationIfNeeded() {
         guard hasBundle else { return }
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { [weak self] granted, _ in
-            Task { @MainActor in self?.authorized = granted }
+        // Use the async API rather than the completion handler: a closure written
+        // inside this @MainActor type inherits MainActor isolation, but the
+        // callback is invoked on a background queue, which trips the isolation
+        // assertion and traps in a real app bundle.
+        Task { @MainActor in
+            let granted = (try? await UNUserNotificationCenter.current()
+                .requestAuthorization(options: [.alert, .sound])) ?? false
+            self.authorized = granted
         }
     }
 
@@ -50,7 +56,7 @@ final class AlertEngine {
 
     private func fire(title: String, body: String) {
         guard hasBundle, authorized else {
-            NSLog("[alert] \(title): \(body)")
+            NSLog("%@", "[alert] \(title): \(body)")
             return
         }
         let content = UNMutableNotificationContent()

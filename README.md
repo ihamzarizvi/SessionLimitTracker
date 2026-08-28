@@ -10,6 +10,21 @@ is to stop and run `/usage`. This app makes both ambient, and warns you before y
 
 ---
 
+## Install
+
+Download **[SessionLimitTracker-1.0.0.dmg](https://github.com/ihamzarizvi/SessionLimitTracker/releases/latest)**,
+open it, and drag the app to Applications.
+
+The app is ad-hoc signed but **not notarised** (that needs a paid Apple Developer
+Program membership), so on first launch macOS will say the developer cannot be
+verified. Either **right-click the app → Open → Open**, or clear the quarantine flag:
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/Session Limit Tracker.app"
+```
+
+It runs as a menu-bar item with no Dock icon. Requires macOS 14 or later.
+
 ## Features
 
 - **Menu-bar item + popover** — Claude's session and weekly bars with live reset countdowns.
@@ -64,10 +79,18 @@ Credentials live only in the macOS Keychain. Nothing is logged or sent off-devic
 
 ## Build
 
-Requires macOS 14+ and a Swift 6 toolchain.
+Requires macOS 14+ and a Swift 6 toolchain. No full Xcode needed.
 
 ```bash
-swift build
+swift build                 # compile
+./Scripts/build-dmg.sh      # build the .app bundle and a distributable .dmg
+```
+
+`build-dmg.sh` renders the icon, assembles the bundle, signs it and packages the
+DMG. To ship a notarised build, pass a Developer ID identity:
+
+```bash
+SIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)" ./Scripts/build-dmg.sh
 ```
 
 Unit tests use XCTest and need **full Xcode** (not just Command Line Tools):

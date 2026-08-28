@@ -23,7 +23,7 @@ enum LaunchAtLogin {
                 if SMAppService.mainApp.status == .enabled { try SMAppService.mainApp.unregister() }
             }
         } catch {
-            NSLog("LaunchAtLogin toggle failed: \(error.localizedDescription)")
+            NSLog("%@", "LaunchAtLogin toggle failed: \(error.localizedDescription)")
         }
     }
 }
