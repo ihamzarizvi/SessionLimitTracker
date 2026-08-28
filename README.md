@@ -14,6 +14,10 @@ Claude meters two windows at once: a rolling **5-hour session** limit and a **we
 all-models** limit, shared across web, desktop and Claude Code. The only way to see them
 is to stop and run `/usage`. This app makes both ambient, and warns you before you're cut off.
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Session Limit Tracker — the Claude Usage popover and the edge rail docked to the screen edge" width="560">
+</p>
+
 ### ⬇︎ [Download the latest DMG](https://github.com/ihamzarizvi/SessionLimitTracker/releases/latest)
 
 Open it, drag the app to Applications, then see [Install](#install) for the one-time
