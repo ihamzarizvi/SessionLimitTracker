@@ -156,7 +156,7 @@ Sources/SessionLimitTracker/
 
 ## Developer
 
-**Syed Hamza Rizvi** — Full-Stack Developer · Founder & CEO, [Xsofty](https://hamzarizvi.com)
+**Syed Hamza Rizvi** — Full-Stack Developer · Founder & CEO, [Xsofty](https://xsofty.com)
 Islamabad / Global
 
 - Website — [hamzarizvi.com](https://hamzarizvi.com)
